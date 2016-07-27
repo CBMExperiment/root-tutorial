@@ -16,7 +16,7 @@ VirtualBox is a powerful virtualization product for PCs. If not already
 installed please install *VirtualBox* on your machine: [https://www.virtualbox.org](https://www.virtualbox.org)
 
 ## Setup a virtual machine
-- Download the prepared appliance from [here](https://fairroot.gsi.de/downloads/ROOT_Tutorial.ova)
+- Download the prepared appliance from [here](http://fairroot.gsi.de/downloads/ROOT_Tutorial.ova)
 - Import the appliance into *VirtualBox*
    - From the menu "File” select “Import Appliance”
    - Boot the machine by double clinking in the available images
@@ -29,5 +29,7 @@ installed please install *VirtualBox* on your machine: [https://www.virtualbox.o
 
     `git clone https://github.com/fuhlig1/root-tutorial.git`
 
+## Start ROOT
+- Set the correct environment by typing `source /opt/root/bin/thisroot.sh`
 - Start ROOT by typing `root` in a terminal
 
