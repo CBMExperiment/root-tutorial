@@ -17,9 +17,10 @@ installed please install *VirtualBox* on your machine: [https://www.virtualbox.o
 
 ## Setup a virtual machine
 - Download the prepared appliance from [here](http://fairroot.gsi.de/downloads/ROOT_Tutorial.ova)
+   - The download can take some time since the size of the image is 1.5GB
 - Import the appliance into *VirtualBox*
-   - From the menu "File” select “Import Appliance”
-   - Boot the machine by double clinking in the available images
+   - From the menu "File” select “Import Appliance” and select the just downloaded file
+   - Boot the machine by double clinking on the available images
 - Login to the virtual machine using the username/password combination: fairroot/FairRoot 
 
 ## Instructions within in the virtual machine
