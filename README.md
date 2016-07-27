@@ -13,13 +13,14 @@ installed.
 ## Get *VirtualBox*
 
 VirtualBox is a powerful virtualization product for PCs. If not already
-installed please install *VirtualBox* on your machine: [https://www.virtualbox.org](https://ww.virtualbox.org)
+installed please install *VirtualBox* on your machine: [https://www.virtualbox.org](https://www.virtualbox.org)
 
 ## Setup a virtual machine
 - Download the prepared appliance from [here](https://fairroot.gsi.de/downloads/ROOT-Tutorial.ova)
 - Import the appliance into *VirtualBox*
    - From the menu "File” select “Import Appliance”
    - Boot the machine by double clinking in the available images
+- Login to the virtual machine using the username/password combination: fairroot/FairRoot 
 
 ## Instructions within in the virtual machine
 - Get the all the files and material to your work area
