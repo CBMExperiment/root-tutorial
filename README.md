@@ -13,7 +13,7 @@ installed.
 ## Get *VirtualBox*
 
 VirtualBox is a powerful virtualization product for PCs. If not already
-installed please install *VirtualBox* on your machine: [hpps://www.virtualbox.org](hpps://ww.virtualbox.org)
+installed please install *VirtualBox* on your machine: [https://www.virtualbox.org](https://ww.virtualbox.org)
 
 ## Setup a virtual machine
 - Download the prepared appliance from [here](https://fairroot.gsi.de/downloads/ROOT-Tutorial.ova)
@@ -26,7 +26,7 @@ installed please install *VirtualBox* on your machine: [hpps://www.virtualbox.or
    - Open a terminal using the terminal desktop icon
    - Execute the following command on the terminal
 
-    `git clone https://github.com/root-mirror/training.git`
+    `git clone https://github.com/fuhlig1/root-tutorial.git`
 
 - Start ROOT by typing `root` on the terminal
 
