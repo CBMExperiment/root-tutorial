@@ -1,26 +1,42 @@
-// Read the previously produced N-Tuple and print on screen
-// its content
+// Fill an n-tuple and write it to a file simulating measurement of
+// conductivity of a material in different conditions of pressure
+// and temperature.
 
-void TNtuple_read(){
+void TNtuple_write(){
 
-  // Open a file, save the ntuple and close the file
-  TFile in_file("conductivity_experiment.root");
-  TNtuple* my_tuple;
+  // Initialise the TNtuple
+  // The first parameter is the name of the object.
+  // This name is shown in the browser as root of the tree
+  // The second parameter is a description or title
+  // The third parameter is the list of branches which will written
+  // to the file. The names are separated by colons 
+  TNtuple cond_data("cond_data",
+                    "Example N-Tuple",
+                    "Potential:Current:Temperature:Pressure");
 
-  in_file.GetObject("cond_data",my_tuple);
+  // Fill it randomly to fake the acquired data
+  TRandom3 rndm;
+  float pot,cur,temp,pres;
+  for (int i=0;i<10000;++i){
+    pot=rndm.Uniform(0.,10.);      // get voltage
+    temp=rndm.Uniform(250.,350.);  // get temperature
+    pres=rndm.Uniform(0.5,1.5);    // get pressure
+    cur=pot/(10.+0.05*(temp-300.)-0.2*(pres-1.)); // current
 
-  float pot,cur,temp,pres; float* row_content;
+    // add some random smearing (measurement errors)
+    pot*=rndm.Gaus(1.,0.01); // 1% error on voltage
+    temp+=rndm.Gaus(0.,0.3); // 0.3 abs. error on temp.
+    pres*=rndm.Gaus(1.,0.02);// 1% error on pressure
+    cur*=rndm.Gaus(1.,0.01); // 1% error on current
 
-  cout << "Potential\tCurrent\tTemperature\tPressure\n";
-
-  for (int irow=0;irow<my_tuple->GetEntries();++irow){
-    my_tuple->GetEntry(irow);
-    row_content = my_tuple->GetArgs();
-    pot = row_content[0];
-    cur = row_content[1];
-    temp = row_content[2];
-    pres = row_content[3];
-    cout << pot << "\t" << cur << "\t" << temp
-         << "\t" << pres << endl;
+    // write to ntuple
+    cond_data.Fill(pot,cur,temp,pres);
   }
+
+  // Create the file, Save the ntuple and close the file
+  TFile ofile("conductivity_experiment.root","RECREATE");
+  cond_data.Write();
+  ofile.Close();
 }
+
+
